@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter.messagebox
 
 # Create screen
 root = Tk()
@@ -11,8 +12,11 @@ root.resizable(0, 0)
 
 def showName():
     name = userName.get() # Get data form userName.
-    print(name)
-    myText.delete(0, END) # Clear text(start, end).
+    if name == "":
+        tkinter.messagebox.showerror("Detail", "Please fill in your name.") # title, content
+    else:
+        myText.delete(0, END) # Clear text(start, end).
+        tkinter.messagebox.showinfo("Detail", "Users = " + name) # title, content
 
 # Entry Widget
 userName = StringVar() # This part keeps data from Entry Widget
