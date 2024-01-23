@@ -11,7 +11,12 @@ root.resizable(0, 0)
 
 def selectChoice():
     result = choice.get()
-    print(result)
+    if result == 1:
+        root.config(bg="green")
+    elif result == 2:
+        root.config(bg="pink")
+    else:
+        root.config(bg="purple")
 
 choice = IntVar()
 # Radio button
